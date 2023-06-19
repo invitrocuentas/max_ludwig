@@ -1,0 +1,73 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.join_us{
+    /*min-height: 60vh;*/
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    @media (min-width: v.$desktop){
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    @include m.flex(center, 0);
+    flex-direction: column;
+    z-index: 2;
+    @include m.forma_fondo;
+    &::before{
+        z-index: -3;
+        clip-path: polygon(0 4rem, 100% 0, 100% 100%, 0 100%);
+        @media screen and (min-width: v.$desktop){
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        background: v.$guinda;
+    }
+
+    .contenedor{
+        position: relative;
+        z-index: 1;
+    }
+
+    h2, p, a{
+        color: v.$blanco;
+    }
+    h2, p{
+        text-align: center;
+    }
+    p{
+        font-family: v.$regular;
+        font-size: 1.6rem;
+        font-weight: 100;
+        margin: 30px 0 60px;
+    }
+    .buttons{
+        @include m.flex(center, 50px);
+    }
+    a.btn{
+        border-radius: 32px;
+        @include m.flex(center, 16px);
+        font-family: v.$bold;
+        font-size: 1.3rem;
+        width: fit-content;
+        min-height: 50px;
+        padding-block: 6px;
+        padding-inline: 30px;
+        border: 2px solid;
+        i{
+            font-size: 30px;
+        }
+        &.blue{
+            background: v.$azul-claro;
+            border-color: v.$azul-claro;
+        }
+        &.pink{
+            background: v.$rosa;
+            border-color: v.$rosa;
+        }
+
+        &:hover{
+            border-color: v.$blanco;
+            background: transparent;
+        }
+
+    }
+}

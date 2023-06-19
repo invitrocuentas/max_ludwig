@@ -1,0 +1,46 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.card_valor{
+    width: min(100%, 320px);
+    border-radius: 50px;
+    background: v.$azul;
+    @include m.transition;
+    padding: 40px 10px;
+    picture{
+        margin: 0 auto;
+        max-width: 40%;
+        min-width: 90px;
+        @include m.transition;
+        transform: translateY(30px);
+        img{
+            width: 100%;
+            filter: brightness(100);
+        }
+    }
+    h2{
+        display: block;
+        margin: 20px auto 0;
+        color: v.$blanco;
+        background: v.$guinda;
+        border-radius: 15px;
+        padding: 6px 10px;
+        width: fit-content;
+        text-align: center;
+        @include m.transition;
+        opacity: 0;
+    }
+    &:hover{
+        background: rgba($color: v.$azul, $alpha: 0.2);
+        @include m.shadow(0,3px,6px,v.$sombra);
+        picture{
+            transform: none;
+            img{
+                filter: none;
+            }
+        }   
+        h2{
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.nuestros-convenios{
+    background-color: white;padding: 5rem 15rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
+    &__image{
+        height: 8rem;
+        width: auto;
+        position: absolute; 
+        top: 0; 
+        right: -2rem;
+        z-index: 1;
+        display: none;
+        @media (min-width: v.$desktop){
+            height: auto;
+            top: 10%; 
+            display: block;
+        }
+    }
+    &__header{
+        display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 2rem; 
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        // padding: 0rem 20rem;  
+    }
+    &__title{
+        color: #9D325E;
+    }
+    &__text{
+        font-family: 'GorditaRegular'; color: #3D3D3D; font-size: 1.2rem; text-align: center;
+        margin-bottom: 4rem;
+    }
+    &__body{
+        width: 100%;
+    }
+    &__subtitle{
+        font-family: 'GorditaBold'; 
+        margin-bottom: 1.5rem;
+        color: #53699B; font-size: 2rem;
+    }
+    &__details{
+        display: flex; 
+        justify-content: flex-start; align-items: center; 
+        gap: 2rem;
+        flex-direction: column-reverse;
+        @media (min-width: v.$desktop){
+            flex-direction: row;
+        }
+        &-content{
+            display: flex; justify-content: center; align-items: center; flex-direction: column; 
+            width: 100%; 
+            gap: .5rem;
+            @media (min-width: v.$desktop){
+                width: 30rem; 
+            }
+        }
+        &-item{
+            width: 100%;
+        }
+        &-button{
+            font-family: 'GorditaMedium'; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; width: 100%; text-align: start; background-color: #7EA4ED; padding: .5rem 2rem; border: 1px solid #7EA4ED; color: white; height: 4.5rem; border-radius: 3rem;
+        }
+        &-icon{
+            width: 1.5rem;
+        }
+        &-description{
+            min-height: 10rem; 
+            width: 100%; 
+            margin: 1rem 0; 
+            gap: 2rem; justify-content: center; 
+            align-items: center; display: none;
+            flex-direction: column-reverse;
+            @media (min-width: v.$desktop){
+                flex-direction: row;
+                width: 70vw;
+            }
+        }
+        &-text{
+            color: #757575; font-family: 'GorditaRegular'; font-size: 1.2rem;
+        }
+        &-img{
+            // height: 22rem;
+            width: 200px;
+            @media (min-width: v.$desktop){
+                width: 100%;
+            }
+        }
+    }
+    #imagen-convenio {
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.niveles-formacion{
+    height: 70vh; width: 100%; position: relative;
+    &__bg{
+        height: 80vh; width: 100%; z-index: 0; background-size: cover !important; background-position: center; background-repeat: no-repeat; 
+        position: absolute; top: 0;
+    }
+    &__content{
+        height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 2rem; position: relative; top: 0;
+    }
+    &__description{
+        padding-left: 5%;
+        padding-right: 5%;
+        display: flex; justify-content: center; align-items: center; flex-direction: column; max-width: 73rem; text-align: center; gap: 1.5rem;
+        font-size: .9rem;
+        @media (min-width: v.$desktop){
+            font-size: 1.2rem;
+        }
+    }
+    &__button{
+        width: fit-content; padding: .5rem 2rem; background-color: #9D325E; color: white; border: 1px solid #9D325E; border-radius: 3rem; font-family: 'GorditaRegular';
+    }
+    &__txt1{
+        color: white; font-family: 'GorditaBold'; font-size: 2.7em;
+    }
+    &__txt2{
+        color: white; font-family: 'GorditaRegular'; font-size: 1.3em;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

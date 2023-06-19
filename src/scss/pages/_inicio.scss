@@ -1,0 +1,209 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+main.home{
+    height: 102.5vh;
+    picture{
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .contenedor{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    h1{
+        font-family: v.$bold;
+        max-width: 600px;
+        color: v.$blanco;
+        @include m.text-shadow;
+        strong, b, span{
+            display: inline-block;
+            border-radius: 12px;
+            padding: 4px;
+            margin-bottom: 4px;
+            @include m.shadow(0, 3px, 6px, v.$sombra);
+        }
+    }
+    .guinda{
+        strong, b, span{
+            background: v.$guinda;
+        }
+    }
+    .azul{
+        strong, b, span{
+            background: v.$azul;
+        }
+    }
+}
+
+.niveles{
+    background: v.$guinda;
+    clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 4rem), 0% 100%);
+    padding: 4rem 0 6rem;
+    // @media screen and (min-width: v.$desktop){
+    //     clip-path: polygon(0 0, 100% 0%, 100% 93%, 0% 100%);
+    // }
+    h2{
+        color: v.$blanco;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    .splide__slide{
+        padding-bottom: 24px;
+        &:nth-child(odd){
+            .card_nivel_icon{
+                background: v.$guinda;
+            }
+        }
+        &:nth-child(even){
+            .card_nivel_icon{
+                background: v.$azul;
+            }
+        }
+    }
+}
+
+.pilares{
+    margin-top: -4rem;
+    clip-path: polygon(0 4rem, 100% 0%, 100% 100%, 0% 100%);
+    background: v.$gris-claro;
+    padding: 5rem 0 10rem;
+    @media (min-width: v.$desktop) {
+        padding-top: 7rem;
+        padding-bottom: 10rem;
+        // clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    h2{
+        text-align: center;
+        font-family: v.$black;
+        color: v.$guinda;
+        position: relative;
+        width: fit-content;
+        margin-inline: auto;
+        @include m.line(20px, v.$guinda);
+        margin-bottom: 5rem;
+        @media screen and (min-width: v.$tablet){
+            margin-bottom: 12rem;
+        }
+    }
+
+    .stair{
+        @include m.flex(center, 80px);
+        @media screen and (min-width: v.$tablet) {
+            gap: 30px;
+        }
+        .step{
+            @media screen and (min-width: v.$tablet){
+                &:nth-child(1){
+                        
+                }
+                &:nth-child(2){
+                    margin-top: -6rem;
+                }
+                &:nth-child(3){
+                    margin-top: -12rem;
+                }
+                &:nth-child(4){
+                    margin-top: -18rem;
+                }
+            }
+        }
+    }
+}
+
+.experience{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 100%; 
+    background-color:  v.$blanco; 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    &__book-img{
+        position: absolute;
+        height: 50px;
+        width: auto;
+        left: 30px;
+        top: 0;
+        transform: translateY(-50%);
+        @media (min-width: v.$desktop) {
+            height: auto;
+        }
+    }
+    
+    &__question-img{
+        position: absolute;
+        height: auto;
+        right: 30px;
+        top: 30%;
+        height: 50px;
+        width: auto;
+        @media (min-width: v.$desktop) {
+            height: auto;
+        }
+    }
+    &__content{
+        box-shadow: 1px 5px 15px #00000029;
+        border-radius: 5rem;
+        margin: 0 1rem;
+        padding: 4rem 1rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        @media screen and (min-width: v.$desktop){
+            margin-left: 15rem;
+            margin-right: 15rem;
+            padding: 4rem 10rem;
+            max-width: initial;
+        }
+    }
+    &__title{
+        text-align: center;
+        font-family: 'GorditaBold';
+        color: #2A344F;
+        margin-bottom: 2rem;
+        font-size: 24px;
+        @media (min-width: v.$desktop){
+            font-size: 35px;
+        }
+        padding: 0 2rem;
+        display: flex;
+    }
+    &__year-container{
+        display: grid;
+        grid-template-columns: 2fr 2fr 3fr;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    &__year-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__number{
+        color: v.$guinda;
+        font-size: 30px;
+        @media (min-width: v.$desktop){
+            font-size: 100px;
+        }
+        font-family: 'GorditaBlack';
+    }
+    &__description{
+        color: v.$azul-claro;
+        font-size: 16px;
+        @media (min-width: v.$desktop){
+            font-size: 30px;
+        }
+        font-family: 'GorditaBlack';
+        text-align: center;
+    }
+}

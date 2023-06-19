@@ -1,0 +1,280 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.contenido_escalonado{
+    background: v.$gris-claro;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @media (min-width: v.$desktop){
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    .bg_icon{
+        &.plane{
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 300px;
+            right: 15px;
+            max-height: 400px;
+            display: none;
+            @media (min-width: v.$tablet){
+                display: block;    
+            }
+        }
+    }
+
+    .row{
+        @include m.flex(space-between, 0);
+        flex-direction: column;
+        width: 100%;
+        // gap: 4rem;
+        @media (min-width: v.$desktop){
+            flex-direction: row;
+            // gap: 6rem;
+        }
+        position: relative;
+        z-index: 3;
+        a{
+            display: block;
+            margin: 20px auto 0;
+            width: fit-content;
+            color: v.$blanco;
+            border-radius: 28px;
+            border: 2px solid;
+            min-height: 44px;
+            font-size: 1.25rem;
+            padding: 6px 20px;
+            @include m.flex(center, 0);
+            font-family: v.$medium;
+            &:hover{
+                background: transparent !important;
+            }
+        }
+
+        a{
+            background: v.$rosa;
+            border-color: v.$rosa;
+            &:hover{
+                color: v.$rosa;
+            }
+        }
+        &:not(:last-child){
+            // margin-bottom: 3rem;
+        }
+        &:nth-child(even){
+            @media (min-width: v.$desktop){
+                flex-direction: row-reverse;
+            }
+            a{
+                background: v.$azul;
+                border-color: v.$azul;
+                &:hover{
+                    border-color: v.$blanco;
+                    color: v.$blanco;
+                }
+            }
+        }
+        .col{
+            flex: 1;
+            &:first-child{
+                margin-bottom: 3rem;
+            }
+            &.padding-l{
+                padding-left: 0;
+                @media screen and (min-width: v.$desktop){
+                    padding-left: 6rem;
+                }
+            }
+            &.padding-r{
+                padding-right: 0;
+                @media screen and (min-width: v.$desktop){
+                    padding-right: 3rem;
+                }
+            }
+        }
+        picture{
+            width: 100%;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                border-radius: 50px;
+                top: 15px;
+                left: 15px;
+                width: 100%;
+                height: 100%;
+                background: rgba($color: v.$guinda, $alpha: 0.7);
+                z-index: 0;
+            }
+            img{
+                width: 100%;
+                border-radius: 50px;
+                position: relative;
+            }
+        }
+        h2{
+            color: v.$guinda;
+            margin: 0 0 20px 0;
+            text-align: left;
+            @media  (max-width: v.$desktop){
+                font-size: 2rem;
+            }
+        }
+        p{
+            text-align: left;
+            color: v.$gris;
+            font-size: 1.25rem;
+            font-family: v.$regular;
+            line-height: 1.3em;
+            word-wrap: break-word;
+            max-width: 100%;
+            @media (min-width: v.$tablet){
+                max-width: 500px;
+            }
+            @media (min-width: v.$desktop){
+                max-width: 600px;
+            }
+            
+        }
+    }
+
+    &.page_formation{
+        background: v.$blanco;
+        @include m.forma_fondo;
+        .button-container{
+            max-width: 600px;
+            display: flex; justify-content: center; align-items: center; width: 100%; margin: 1rem 0;
+        }
+        button{
+            width: fit-content; padding: .5rem 2rem; background-color: v.$guinda; color: v.$blanco; border: 1px solid v.$guinda; border-radius: 3rem; font-family: 'GorditaRegular'; 
+            font-size: 1.25rem;
+            @media screen and (min-width: v.$desktop){
+                font-size: 1.5rem;
+            }
+        }
+
+        &::before{
+            clip-path: polygon(0 0, 100% 4rem, 100% calc(100% - 4rem), 0% 100%);
+            top: 50%;
+            transform: translateY(-50%);
+            @media (min-width: v.$desktop){
+                // max-height: 74vh;
+                // clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+            }
+            z-index: 1;
+        }
+
+        .row{
+            padding:  0 5%;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            @media (min-width: v.$desktop){
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+            &:nth-child(even){
+                h2, p{
+                    color: v.$blanco;
+                }
+            }
+        }
+
+        .bg_icon{
+            &.plane{
+                display: none;
+                @media (min-width: v.$tablet_lg){
+                    display: block;
+                    max-width: 200px;
+                }
+                @media (min-width: v.$desktop_lg){
+                    display: block;
+                    max-width: 300px;
+                    max-height: 400px;
+                }
+                bottom: 0;
+                transform: none;
+                right: 15px;
+            }
+            &.books{
+                bottom: 25%;
+                right: 5%;
+                transform: none;
+                max-width: 300px;
+                max-height: 400px;
+            }
+        }
+
+    }
+    &.page_formation:not(.admision){
+        .row{
+            picture{
+                &::before{
+                    background: rgba($color: v.$azul, $alpha: 0.9);
+                }
+            }
+        }
+    }
+
+    &.admision{
+        padding: 5rem 0;
+
+        &::before{
+            bottom: -10px;
+            transform: none;
+            top: auto;
+            background: v.$azul;
+            
+        }
+        .bg_icon{
+            &.books{
+                bottom: -100px;
+                right: 5%;
+                transform: none;
+                max-width: 300px;
+                max-height: 400px;
+            }
+        }
+    }
+}
+
+.valores{
+    padding: 6rem 0 8rem;
+
+    .bg_icon{
+        &.birrete{
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            display: none;
+            @media (min-width: v.$tablet_lg){
+                display: block;
+            }
+        }
+        &.oleos{
+            top: -70px;
+            left: 5%;
+            display: none;
+            @media (min-width: v.$tablet_lg){
+                display: block;
+            }
+        }
+    }
+
+    h2{
+        color: v.$guinda;
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+    .row{
+        width: min(100%, 1060px);
+        margin-inline: auto;
+        @include m.flex(center, 12px 40px);
+
+        .card_valor{
+            &:nth-child(3n-1){
+                margin-top: 40px;
+            }
+        }
+
+    }
+}

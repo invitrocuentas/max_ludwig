@@ -1,0 +1,102 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.proceso{
+    @media (min-width: v.$desktop){
+        margin-top: -12rem;
+    }
+}
+
+.precios{
+    padding: 5rem 0;
+    // clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+    h2{
+        text-align: center;
+        color: v.$guinda;
+        margin-bottom: 2.5rem;
+    }
+    & > .contenedor{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    button{
+        width: fit-content; padding: .5rem 2rem; background-color: #9D325E; color: white; border: 1px solid #9D325E; border-radius: 3rem; font-family: 'GorditaRegular'; font-size: 1.5rem;
+    }
+    .contenedor_sombreado{
+        border-radius: 63px;
+        @include m.shadow(0,0,6px,#00000038);
+        min-height: 300px;
+        @include m.flex(center, 10px);
+        flex-direction: column;
+        padding: 3rem 2rem;
+        overflow-x: auto;
+        @media (min-width: v.$desktop){
+            padding: 5rem 4rem;
+        }
+    }
+    .table{
+        font-size: 1.25rem;
+        min-width: 500px;
+        overflow-x: auto;
+        @media screen and (min-width: v.$desktop){
+            font-size: 1.5rem;
+        }
+        .tr{
+            width: 100%;
+            @include m.grid(3, 20px);
+            &:not(:last-child){
+                margin-bottom: 10px;
+            }
+            .td{
+                width: 100%;
+                &>div{
+                    width: 100%;
+                    min-height: 55px;
+                    padding-inline: 16px;
+                    @media (min-width: v.$desktop){
+                        padding-inline: 30px;
+                        min-height: 76px;
+                    }
+                    border-radius: 36px;
+                    background: rgba($color: v.$celeste, $alpha: 0.2);
+                    @include m.flex(flex-start, 0);
+                    // padding-inline: 30px;
+                    &.center{
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                    &.celeste{
+                        background: v.$celeste;
+                        p{
+                            font-family: v.$black;
+                        }
+                    }
+                    &.guinda{
+                        background: v.$guinda;
+                        p{
+                            color: v.$blanco;
+                        }
+                    }
+                    &.azul{
+                        background: v.$azul-claro;
+                        p{
+                            font-family: v.$medium;
+                            color: v.$blanco;
+                        }
+                    }
+                    p{
+                        font-family: v.$bold;
+                        // font-size: 1.5rem;
+                        font-size: inherit;
+                    }
+                }
+                &.td-2{
+                    grid-column: span 2;
+                    &>div{
+                        justify-content: space-around;
+                    }
+                }
+            }
+        }
+    }
+}

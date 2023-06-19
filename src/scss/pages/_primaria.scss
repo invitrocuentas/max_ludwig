@@ -1,0 +1,80 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.primaria{
+    background: v.$blanco;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @media (min-width: v.$desktop){
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    @include m.forma_fondo;
+    &::before{
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+        top: 50%;
+        transform: translateY(-50%);
+        max-height: 74vh;
+        z-index: 1;
+    }
+    .row{
+        &:nth-child(even){
+            h2, p{
+                color: v.$blanco;
+            }
+        }
+    }
+
+    .bg_icon{
+        &.plane{
+            top: 60%;
+            transform: none;
+            max-width: 300px;
+            right: 15px;
+            max-height: 400px;
+            display: none; 
+            @media (min-width: v.$desktop){
+                display: block;
+            }
+        }
+    }
+}
+
+//cambios xd
+#boton_gracias:hover{
+    border: 1px solid white !important;
+    background-color: transparent !important;
+}
+
+#boton_formulario:hover, #boton_formulario_trabaja:hover, #boton_formulario_admision:hover, #boton_formulario_admision_2:hover{
+    color: #9D325E !important;
+    background-color: transparent !important;
+}
+
+#boton_formulario_admision_1:hover{
+    color: white !important;
+    border: 1px solid white !important;
+    background-color: transparent !important;
+}
+
+#boton_convenio:hover{
+    border: 1px solid white !important;
+    background-color: transparent !important;
+}
+
+#formulario_inputs{
+    textarea{
+        resize: none;
+    }
+    input::placeholder, textarea::placeholder{
+        color: #53699B;
+    }
+}
+
+.mostrar_div{
+    display: flex !important;
+}
+
+.ocultar_div{
+    display: none !important;
+}

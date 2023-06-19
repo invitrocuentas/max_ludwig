@@ -1,0 +1,19 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.wsbutton{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: calc(v.$zindex-header - 1);
+    &__img {
+        bottom: 3rem;
+        right: 3rem;
+        width: 60px;
+        height: 60px;
+        @media screen and (min-width: v.$desktop){
+            width: auto;
+            height: auto;    
+        }
+    }   
+}

@@ -1,0 +1,36 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.hamburg{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 25px;
+  cursor: pointer;
+  @media screen and (min-width: v.$desktop){
+    display: none;
+  }
+  div{
+    height: 5px;
+    width: 100%;
+    background-color: v.$rosa;
+    transform-origin: left;
+    @include m.transition;
+    &:hover{
+        background-color: v.$guinda;
+    }
+  }
+  &.active{
+    div{
+      &:nth-child(1){
+        transform: rotate(45deg)
+      }
+      &:nth-child(2){
+        opacity: 0;
+      }
+      &:nth-child(3){
+        transform: rotate(-45deg)
+      }
+    }
+  }
+}

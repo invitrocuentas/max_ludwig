@@ -1,0 +1,25 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.button{
+    $border-color: v.$rosa;
+    $background-color: v.$rosa;
+    $color: v.$blanco;
+    width: fit-content; padding: .5rem 2rem; background-color: $background-color; 
+    color: $color; 
+    border: 1px solid $border-color; 
+    border-radius: 3rem; 
+    font-family: 'GorditaRegular';
+    &--primary{
+        $border-color: v.$rosa;
+        $background-color: v.$rosa;
+    }
+    &--guinda{
+        $border-color: v.$guinda;
+        $background-color: v.$guinda;   
+    }
+    &--azul{
+        $border-color: v.$azul;
+        $background-color: v.$azul;
+    }
+}

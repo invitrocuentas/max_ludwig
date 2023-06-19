@@ -1,0 +1,46 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.galeria_masonry{
+    padding: 5rem 0 2rem;
+    .bg_icon{
+        &.oleos{
+            top: 5%;
+            left: 5%;
+            @media (max-width: v.$desktop){
+                height: 4rem;
+            }
+        }
+    }
+    h2{
+        text-align: center;
+        color: v.$guinda;
+        margin-bottom: 2.5rem;
+    }
+    .video, .row{
+        width: min(100%, 1060px);
+        margin-inline: auto;
+    }
+    .row{
+        column-count: 3;
+        @media(max-width: v.$desktop){
+            column-count: 2;
+        }
+        column-gap: 20px;
+        margin-bottom: 3rem;
+
+        .item{
+            display: inline-block;
+            margin-bottom: 20px;
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .video{
+        background: v.$gris;
+        border-radius: 50px;
+        overflow: hidden;
+    }
+}

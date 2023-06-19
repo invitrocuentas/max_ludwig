@@ -1,0 +1,135 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.formacion-fotos{
+    width: 100%; display: flex; position: relative; 
+    justify-content: center; align-items: center; 
+    &__container{
+        width: 100%; display: flex; position: relative; justify-content: center; align-items: center; padding: 0 3rem;
+    }
+    &__bg{
+        position: absolute; top: 0; width: 100%; 
+        height: 350px; background-color: #2A344F;
+    }
+    &__icon{
+        position: absolute; top: -5rem; left: 15px;
+        display: none;
+        @media (min-width: v.$desktop){
+            display: block;
+        }
+    }
+    &__wrapper{
+        position: relative; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 3rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    &__title{
+        font-family: 'GorditaBold'; color: white;
+        font-size: 2.2rem;
+        @media (min-width: v.$desktop){
+            font-size: 2.85rem;
+        }
+    }
+    &__content{
+        display: flex; 
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        flex-wrap: wrap;
+        gap: 3rem;
+        @media (min-width: v.$desktop){
+            flex-direction: row;
+            gap: 6rem;
+        }
+    }
+    &__imgitem{
+        max-width: 100%;
+    }
+      
+}
+
+
+.category-section{
+    background: url(http://localhost/max_planck/wp-content/themes/theme_max/images/banner_primaria-2.png);
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 4rem), 0% 100%);
+    margin-bottom: -5rem;
+    display: flex;
+    align-items: center;
+    @media (min-width: v.$desktop){
+        // bottom: -76px;
+        min-height: 90vh;
+        clip-path: polygon(0 0, 100% 0%, 100% 91.4%, 0% 100%);
+        // margin-bottom: initial;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    &__content{
+        width: 100%;
+        display: flex;
+        height: 100%;
+        justify-content: end;
+        align-items: center;
+        gap: 2rem;
+        padding-right: 10rem;
+        @media (max-width: v.$desktop){
+            padding-right: 0rem;
+            flex-direction: column;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+    }    
+    &__item{
+        position: relative;
+        background-color: white;
+        width: 350px;
+        padding: 2rem;
+        border-radius: 3rem;
+        box-shadow: 0px 3px 6px #00000029;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    &__image-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 250px;
+        width: 100%;
+        & > img{
+            border-radius: 50%; height: 100%; width: 250px;
+        }
+    }
+    &__icon-container{
+        border-radius: 50%;position: absolute; bottom: 0; right: 30px; height: 80px; width: 80px; background-color: #CC4482; display: flex; justify-content: center;align-items: center;
+    }
+    &__icon{
+        height: 60px; width: 60px;
+    }
+    &__data{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 3rem;
+        &-title{
+            color: #53699B;
+            font-family: 'GorditaBold';
+        }
+        &-description{
+            text-align: left;
+            font-family: 'GorditaRegular';
+        }
+        &-btn{
+            font-family: 'GorditaRegular';position: absolute; bottom: -1rem; border-radius: 3rem; background-color: #2A344F; color: white; padding: .5rem 1rem; border: 1px solid #2A344F;
+        }
+    }
+}

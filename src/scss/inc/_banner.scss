@@ -1,0 +1,32 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+#banner{
+    min-height: 40vh;
+    padding-top: 7vh;
+    @include m.flex(center, 10px);
+    flex-direction: column;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    font-size:  .6rem;
+    @media (min-width: v.$desktop){
+        font-size:  1rem;
+        padding-top: 15vh;
+        min-height: 60vh;
+    }
+
+    h1, p, a{
+        color: v.$blanco;
+        text-align: center;
+    }
+    h1{
+        font-family: v.$black;
+        font-size: 5.2em;
+        margin: 0 0 20px 0;
+    }
+    a, p{
+        font-family: v.$medium;
+        font-size: 1.3rem;
+    }
+}

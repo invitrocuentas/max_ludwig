@@ -1,0 +1,123 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.visitanos-page{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    &__icon-avion{
+        position: absolute;
+        height: 250px;
+        left: 2rem;
+        top: 10%;
+        @media (max-width: v.$desktop) {
+            display: none;
+        }
+    }
+    &__content{
+        height: 100%;
+        width: 100%;
+        padding: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+        @media (max-width: v.$desktop){
+            padding: 2rem 5%;
+            padding: 2rem 5% 7rem
+            5%;
+        }
+    }
+    &__icon-world{
+        position: absolute;
+        height: 250px;
+        right: 2rem;
+        top: 70%;
+        @media (max-width: v.$desktop) {
+            display: none;
+        }
+    }
+    &__description{
+        font-family: 'GorditaRegular';
+        font-size: 1.5rem;
+        color: #3D3D3D;
+        @media (max-width: v.$desktop){
+            font-size: 1rem;
+        }
+    }
+    &__form-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__form{
+        box-shadow: 0px 3px 6px #00000029;
+        border: 1px solid #2A344F;
+        border-radius: 2rem;
+        padding: 3rem;
+        max-width: 70rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        @media (max-width: v.$desktop){
+            padding: 1.2rem;
+        }
+    }
+    &__form-row{
+        width: 100%;
+        display: grid;
+        gap: 1rem;
+        &-three{
+            grid-template-columns: 1fr 1fr 1fr;
+            @media (max-width: v.$desktop){
+                grid-template-columns: 1fr 1fr;
+            }
+            // @media (max-width: v.$tablet){
+            //     grid-template-columns: 1fr;
+            // }
+        }
+        &-two{
+            grid-template-columns: 1fr 1fr;
+        }
+        &-one{
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    &__label{
+        color: #9D325E;
+        font-family: 'GorditaBold';
+    }
+    &__checked-container{
+        display: flex;
+        gap: 1rem;
+    }
+    &__button-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__info-school{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+        &-title{
+            font-family: 'GorditaBold';
+            color: #9D325E;
+        }  
+        &-description{
+            font-family: 'GorditaRegular';
+            font-size: 1.5rem;
+            color: #3D3D3D;
+            @media (max-width: v.$desktop){
+                font-size: 1rem;
+            }
+        } 
+    }
+}
